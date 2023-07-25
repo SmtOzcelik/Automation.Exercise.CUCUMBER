@@ -1,14 +1,17 @@
 package stepdefinitions;
 
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.AccountCreatedPage;
 import pages.LoginPage;
 import pages.SignupPage;
 import utilities.Driver;
 
-public class T01_Login {
+public class T01 {
     LoginPage loginPage = new LoginPage();
     SignupPage signupPage = new SignupPage();
     AccountCreatedPage accountCreatedPage =new AccountCreatedPage();
@@ -76,7 +79,7 @@ public class T01_Login {
 
     @And("Enter day of birth {string}")
     public void enterDayOfBirth(String arg0) {
-
+        Driver.scrollIntoViewJS(signupPage.signupDay);
         Driver.selectByVisibleText(signupPage.signupDay,arg0);
 
     }
